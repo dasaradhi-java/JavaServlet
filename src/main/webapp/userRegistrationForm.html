@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>UserRegistration </title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<style>
+		#frm {
+			width: 500px;
+			margin: auto;
+			margin-top: auto;
+		}
+
+		marquee {
+			margin-top: 10px;
+		}
+	</style>
+
+</head>
+
+
+<body class="container-fluid">
+	<marquee>
+		<h2 class="text-primary">Register Here </h2>
+	</marquee>
+	<form action="userCreation" method="post" class="form card" id="frm">
+		<h1 class="bg-danger text-white card-header">User Registration Form</h1>
+		<table class="table table-hover">
+
+			<tr>
+				<td>Name</td>
+				<td><input type="text" name="username"></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" name="email"></td>
+			</tr>
+			<tr>
+				<td>Mobile</td>
+				<td><input type="text" name="mobile"></td>
+			</tr>
+			<tr>
+				<td>Dob</td>
+				<td><input type="date" name="dob"></td>
+			</tr>
+			<tr>
+				<td>password</td>
+				<td><input type="text" name="password"></td>
+			</tr>
+
+			<tr>
+				<td>city</td>
+				<td><select name="city">
+						<option value="pune">pune</option>
+						<option value="mumbai">mumbai</option>
+						<option value="guntur">guntur</option>
+						<option value="vijayawada">vijayawada</option>
+					</select> </td>
+			</tr>
+			<tr>
+				<td>role</td>
+				<td><select name="role">
+						<option value="admin">Admin</option>
+						<option value="read">Read</option>
+						<option value="write">write</option>
+						<option value="read&Write">read&Write</option>
+					</select> </td>
+			</tr>
+			<tr>
+				<td>Gender</td>
+				<td>
+					<input type="radio" name="gender" value="male">male &nbsp;
+					<input type="radio" name="gender" value="female">female
+				</td>
+			</tr>
+
+			<tr class="card-footer">
+				<td><button type="submit" class="btn btn-outline-success">Register</button></td>
+				<td><button type="reset" class="btn btn-outline-danger">cancel</button></td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+
+
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>BeginnerBook Servlet Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+        }
+
+        table tr {
+            margin-bottom: 10px;
+        }
+
+        table td {
+            padding: 8px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <h2>Book Registration</h2>
+        <form action="register" method="post">
+            <table>
+                <tr>
+                    <td>Book Name</td>
+                    <td><input type="text" name="bookName" required></td>
+                </tr>
+                <tr>
+                    <td>Book Edition</td>
+                    <td><input type="text" name="bookEdition" required></td>
+                </tr>
+                <tr>
+                    <td>Book Price</td>
+                    <td><input type="text" name="bookPrice" required></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Register"></td>
+                    <td><input type="reset" value="Cancel" name="cancel"></td>
+                </tr>
+            </table>
+        </form>
+        <p><a href="BookList">Book List</a></p>
+        <p><a href="userRegistrationForm.html">User Creation form</a></p>
+        <p>Click to <a href="login.html">Login</a></p>
+    </div>
+</body>
+
+</html>
