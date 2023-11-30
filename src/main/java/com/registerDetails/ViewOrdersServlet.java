@@ -35,46 +35,55 @@ public class ViewOrdersServlet extends HttpServlet {
 		out.println("<head>");
 		out.println("<title>View Orders</title>");
 		out.println("<style>");
-		out.println(
-				"body {font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0;}");
-		out.println(
-				".card {background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); width: 400px; text-align: center;}");
-		out.println("h2 {color: #333;}");
-		out.println("table {width: 100%;}");
-		out.println("table tr {margin-bottom: 10px;}");
-		out.println("table td {padding: 8px;}");
+		out.println("body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }");
+		out.println("h2 { color: #333; text-align: center; }");
+		out.println("table { border-collapse: collapse; width: 80%; margin: 20px auto; }");
+		out.println("th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }");
+		out.println("th { background-color: #4CAF50; color: white; }");
+		out.println("tr:hover { background-color: #f5f5f5; }");
+		out.println("a { color: #007bff; text-decoration: none; }");
+		out.println("a:hover { text-decoration: underline; }");
 		out.println("</style>");
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<div class='card'>");
 		out.println("<h2>View Orders</h2>");
 
-		if (!orders.isEmpty()) {
-			out.println("<table>");
-			out.println(
-					"<thead><tr><th>Order ID</th><th>Product Name</th><th>Created Date</th><th>Delivery Date</th><th>Order Quantity</th></tr></thead>");
-			out.println("<tbody>");
+
+		if (!orders.isEmpty()) {		
+			
+			
+			out.println("<table border ='1' align='center'>");
+			out.println("<tr>");
+			out.println("<th>Order ID</th>");
+			out.println("<th>Product Name</th>");
+			out.println("<th>Created Date</th>");
+			out.println("<th>Delivery Date</th>");
+			out.println("<th>Order Quantity</th>");
+			out.println("</tr>");			
+			
 
 			for (OrderEntity order : orders) {
+				
 				out.println("<tr>");
-				out.println("<td>" + order.getOrderId() + "</td>");
+				out.println("<td>" +  order.getOrderId()  + "</td>");
 				out.println("<td>" + order.getProductName() + "</td>");
 				out.println("<td>" + order.getCreateDate() + "</td>");
 				out.println("<td>" + order.getDeliveryDate() + "</td>");
 				out.println("<td>" + order.getOrderQuantity() + "</td>");
-				out.println("</tr>");
+				out.println("</tr>");				
+				
+		
 			}
 
-			out.println("</tbody>");
+			//out.println("</tbody>");
 			out.println("</table>");
 		} else {
 			out.println("<p>No orders available.</p>");
 		}
 
 		out.println("<p>Click <a href='logout.html'>here</a> to logout.</p>");
-		out.println("</div>");
-		out.println("</body>");
-		out.println("</html>");
+		
 	}
 
 	private List<OrderEntity> getOrdersFromDatabase(String username) {
