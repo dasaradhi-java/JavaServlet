@@ -52,6 +52,7 @@ public class RegisterDetails extends HttpServlet {
 	            pw.println("<h2 text-align='center'>User Created Successfully</h2>");
 	            pw.println("<br>");
 	            pw.println("<h2>Your userId is " + username);
+	            pw.println("<p> Click Here to<a href='login.html'>  login</a></P>");
 	        }
 	    } catch (SQLException e) {
 	        e.printStackTrace();

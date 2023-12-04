@@ -34,8 +34,11 @@ public class CreateOrder extends HttpServlet {
 			ps.setString(3, username);
 			Integer count = ps.executeUpdate();
 			if (count == 1) {
-				pw.println("Order Created Successfully");
-				pw.println("<a href='viewOrders.html' style='text-align: center;'>View Orders</a>");
+				pw.println("Order Created Successfully <br>");
+				pw.println("<a href='ViewOrders' style='text-align: center;'>View Orders</a> &nbsp ");
+				pw.println("<a href='createOrder.html' style='text-align: center;'>    Create Orders</a> <br>");
+
+				pw.println("<p>Click <a href='logout.html'>here</a> to logout.</p>");
 
 			} else {
 				pw.println("Order COuld not be placed");
@@ -48,7 +51,7 @@ public class CreateOrder extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		;
+		
 
 	}
 
