@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/BookList")
 public class BookList extends HttpServlet {
-	public static final String query = "select * from Booktable";
+	public static final String query = "select * from BookTable";
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,8 +29,7 @@ public class BookList extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		String url = "jdbc:sqlserver://localhost:1433;databaseName=TestDataBase;user=Sa;password=Sql@123;encrypt=true;trustServerCertificate=true";
-		try (Connection con = DriverManager.getConnection(url); PreparedStatement ps = con.prepareStatement(query);) {
+		try (Connection con = DatabaseConnection.getConnection(); PreparedStatement ps = con.prepareStatement(query);) {
 
 			ResultSet rs = ps.executeQuery();
 			

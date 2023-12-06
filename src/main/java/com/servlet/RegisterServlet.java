@@ -30,8 +30,7 @@ public class RegisterServlet extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		String url = "jdbc:sqlserver://localhost:1433;databaseName=TestDataBase;user=Sa;password=Sql@123;encrypt=true;trustServerCertificate=true";
-		try (Connection con = DriverManager.getConnection(url); PreparedStatement ps = con.prepareStatement(query);) {
+		try (Connection con = DatabaseConnection.getConnection(); PreparedStatement ps = con.prepareStatement(query);) {
 			ps.setString(1, bookName);
 			ps.setString(2, bookEdition);
 			ps.setFloat(3, bookPrice);
